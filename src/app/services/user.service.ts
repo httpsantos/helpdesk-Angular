@@ -23,7 +23,15 @@ export class UserService {
     }
   }
 
-  findALL(  ) {
+  findALL( page: number, count:number ) {
+    return this.htpp.get(`${HELP_DESK_API}/api/user/${page}/${count}`);
+  }
 
+  findById (id: string) {
+    return this.htpp.get(`${HELP_DESK_API}/api/user/${id}`);
+  }
+
+  delete (id: string) {
+    return this.htpp.delete(`${HELP_DESK_API}/api/user/${id}`);
   }
 }
